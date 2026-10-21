@@ -18,7 +18,18 @@ sources:
       - name: product
         identifier: raw_gz_product
         description: Product Data
+        columns:
+          - name: products_id
+            description: Primary Key for Products Table
+            tests:
+              - not_null
 
       - name: shipment
         identifier: raw_gz_ship
         description: Shipment Data
+        columns:
+          - name: orders_id
+            description: Primary Key for Shipment Table
+            tests:
+              - not_null
+            
