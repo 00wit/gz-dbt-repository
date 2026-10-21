@@ -1,0 +1,24 @@
+version: 2
+sources:
+  - name: raw
+    schema: gz_raw_data
+    description: Raw Dataset Contains Raw Tables For Greenweez
+    tables:
+      - name: sales
+        identifier: raw_gz_sales
+        description: Sales Data
+        columns:
+          - name: orders_id
+            description: primary key for the order
+            tests:
+              - not_null
+        tests:
+          - unique:
+              column_name: "orders_id || '-' || pdt_id"
+      - name: product
+        identifier: raw_gz_product
+        description: Product Data
+
+      - name: shipment
+        identifier: raw_gz_ship
+        description: Shipment Data
