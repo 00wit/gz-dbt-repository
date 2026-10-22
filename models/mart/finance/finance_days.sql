@@ -2,6 +2,10 @@
 
 SELECT
     date_date,
+    ROUND(SUM(operational_margin),2) as operational_margin,
+    ROUND(SUM(shipping_fee),2) as shipping_fee,
+    ROUND(SUM(log_cost),2) as log_cost,
+    ROUND(SUM(ship_cost),2) as ship_cost,
     COUNT(DISTINCT orders_id) AS nb_transactions,
     ROUND(SUM(total_revenue), 2) AS total_revenue,
     SUM(total_quantity) AS total_quantity,
